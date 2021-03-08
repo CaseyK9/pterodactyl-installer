@@ -326,7 +326,7 @@ ptdl_dl() {
 
   cp .env.example .env
   [ "$OS" == "centos" ] && export PATH=/usr/local/bin:$PATH
-  COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
+  COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
   php artisan key:generate --force
   echo "* Downloaded pterodactyl panel files & installed composer dependencies!"
